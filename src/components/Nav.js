@@ -10,11 +10,11 @@ const Nav = () => {
   };
   return (
     <div>
-        <img 
-        alt = 'logo' 
+      <img
+        alt="logo"
         className="logo"
-        src ='https://get.wallhere.com/photo/reactJS-JavaScript-Typescript-programming-programming-language-React-Native-Facebook-react-apps-Front-End-developer-1568827.jpg' />
-      {" "}
+        src="https://get.wallhere.com/photo/reactJS-JavaScript-Typescript-programming-programming-language-React-Native-Facebook-react-apps-Front-End-developer-1568827.jpg"
+      />{" "}
       {auth ? (
         <ul className="nav-ul">
           <li>
@@ -24,14 +24,13 @@ const Nav = () => {
             <Link to="/add">Add Products</Link>
           </li>
           <li>
-            <Link to="/update">Update Products</Link>
-          </li>
-          <li>
             <Link to="/user">User profile</Link>
           </li>
-          <Link onClick={logout} to="/signup">
-            Logout {JSON.parse(auth).name}
-          </Link>
+          <li>
+            <Link onClick={logout} to="/login">
+              Logout {JSON.parse(auth).name}
+            </Link>
+          </li>
         </ul>
       ) : (
         <ul className="nav-ul nav-right">

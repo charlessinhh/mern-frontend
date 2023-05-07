@@ -27,7 +27,18 @@ const UpdateProduct = () => {
 
   const updateProd = async () => {
     console.log(name, price, category, company);
-    navigate("/");
+    let result = await fetch(`http://localhost:5000/product/${params.id}`, {
+      method: "Put",
+      body: JSON.stringify({ name, price, category, company }),
+      headers: {
+        "Content-Type": "Application/json",
+      },
+    });
+
+    result = await result.json();
+    if (result) {
+      navigate("/");
+    }
   };
 
   return (
